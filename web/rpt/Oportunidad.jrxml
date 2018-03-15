@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Oportunidad" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a3c2d1a6-ac01-40af-b8e8-e60b608252a6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="DESDE" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from oportunidades r  left join detallesoportunidades d on d.id_oportunidad=r.id_oportunidad
+
+left join puestos c on d.id_puesto=c.id_puesto
+left join areas p on c.id_area=p.id_area
+
+left join empresas e on r.id_empresa=e.id_empresa
+left join ciudades ci on e.id_ciudad=ci.id_ciudad
+where r.id_oportunidad= $P{DESDE}]]>
+	</queryString>
+	<field name="id_oportunidad" class="java.lang.Integer"/>
+	<field name="nombre_oportunidad" class="java.lang.String"/>
+	<field name="fecha_oportunidad" class="java.sql.Date"/>
+	<field name="id_empresa" class="java.lang.Integer"/>
+	<field name="id_detalleoportunidad" class="java.lang.Integer"/>
+	<field name="id_puesto" class="java.lang.Integer"/>
+	<field name="vacancia_detalleoportunidad" class="java.lang.Integer"/>
+	<field name="horario_detalleoportunidad" class="java.lang.String"/>
+	<field name="rangoedad_detalleoportunidad" class="java.lang.String"/>
+	<field name="nombre_puesto" class="java.lang.String"/>
+	<field name="id_area" class="java.lang.Integer"/>
+	<field name="nombre_area" class="java.lang.String"/>
+	<field name="nombre_empresa" class="java.lang.String"/>
+	<field name="email_empresa" class="java.lang.String"/>
+	<field name="direccion_empresa" class="java.lang.String"/>
+	<field name="telefono_empresa" class="java.lang.String"/>
+	<field name="ruc_empresa" class="java.lang.String"/>
+	<field name="id_ciudad" class="java.lang.Integer"/>
+	<field name="nombre_ciudad" class="java.lang.String"/>
+	<field name="id_departamento" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="78" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="-20" width="602" height="88" backcolor="#3300FF" uuid="d829e4d7-063f-4d43-83a5-3f4f34e980f5"/>
+				<staticText>
+					<reportElement x="20" y="20" width="444" height="43" forecolor="#FFFFFF" uuid="c67036e7-7499-4c0d-8855-58c4bb2d6ee6"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Oportunidades Laborales]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="275" splitType="Stretch">
+			<staticText>
+				<reportElement x="20" y="16" width="237" height="28" uuid="2e675dbe-59ed-4d42-9702-0c09a677c6bc"/>
+				<textElement>
+					<font size="16" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[DATOS DE LAS EMPRESAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="55" width="65" height="20" uuid="972176ae-7060-4b23-810f-5b616f806c8a"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Empresa:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="85" y="55" width="205" height="20" uuid="eca5191b-d52d-4b57-bfdb-603636b97488"/>
+				<textFieldExpression><![CDATA[$F{nombre_empresa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="90" width="65" height="20" uuid="fcbe2295-da10-4195-8770-98cfaf4d6153"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Email:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="85" y="90" width="172" height="20" uuid="b7196817-2376-473d-bad8-f7378892b41d"/>
+				<textFieldExpression><![CDATA[$F{email_empresa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="290" y="90" width="71" height="20" uuid="b15a773a-7c6c-4030-9f69-9e4d0d57e38d"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Direccion:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="368" y="90" width="187" height="20" uuid="64b600cc-3de1-498a-b203-c98a0a6b61b9"/>
+				<textFieldExpression><![CDATA[$F{direccion_empresa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="124" width="65" height="20" uuid="f4785c5d-7cea-4aec-93d3-01de10c2db93"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Teléfono:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="85" y="124" width="172" height="20" uuid="bbc64aaa-cce7-47c6-a5cd-60c455a07bcb"/>
+				<textFieldExpression><![CDATA[$F{telefono_empresa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="290" y="124" width="71" height="20" uuid="e4055ef7-3722-4890-b288-deb1ed3c3965"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ruc:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="368" y="124" width="187" height="20" uuid="e97a9930-cb95-49b3-a607-4a1b24f26dc2"/>
+				<textFieldExpression><![CDATA[$F{ruc_empresa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="155" width="65" height="20" uuid="b1115611-8025-44ab-b422-84c68387eab9"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ciudad]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="85" y="155" width="172" height="20" uuid="57d86880-3797-4942-a787-a3135a13530a"/>
+				<textFieldExpression><![CDATA[$F{nombre_ciudad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-1" y="255" width="148" height="20" uuid="9e46ad5f-c5d3-49c7-9f8a-2c96b5c8f593"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Área]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="148" y="255" width="180" height="20" uuid="367f8319-2264-4d40-bb7f-be35ebba604b"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Puesto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="329" y="255" width="61" height="20" uuid="f228d802-10d4-49e6-9d1f-5c742732ffba"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vacancias]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="255" width="90" height="20" uuid="04846ff7-5897-4a8e-98a0-ab1eb5a197c5"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Horario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="479" y="255" width="92" height="20" uuid="a1d3d192-64a1-4c40-9457-baa5f1920efe"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Edad Requerida]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="211" width="249" height="20" uuid="72e13894-edcc-4319-8e92-a3075e1e1387"/>
+				<textElement>
+					<font size="14" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[OFERTAS LABORALES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="55" width="100" height="20" uuid="a41524a4-8551-4816-b831-b51b026e894d"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Id oferta laboral:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="55" width="114" height="20" uuid="5a022085-874b-46a1-97ae-2cc556cd0b67"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{id_oportunidad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="13" width="148" height="20" uuid="8e917f6c-89ba-4472-85f1-adbd5ebe1314"/>
+				<textFieldExpression><![CDATA[$F{nombre_area}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="148" y="13" width="180" height="20" uuid="8bd21c14-e484-4fdb-a4bb-1b865b151a0d"/>
+				<textFieldExpression><![CDATA[$F{nombre_puesto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="328" y="13" width="61" height="20" uuid="491109c0-fbe9-4447-844d-534f92c3d8ef"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{vacancia_detalleoportunidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="389" y="13" width="90" height="20" uuid="a561fea3-e303-4036-8ac1-a92e6f34c314"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{horario_detalleoportunidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="479" y="13" width="92" height="20" uuid="42e391d4-2e12-496f-8e3a-5d38f3f18e11"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{rangoedad_detalleoportunidad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<textField>
+				<reportElement x="384" y="21" width="80" height="20" uuid="45a724ca-f024-48f8-825f-7fb8f5a92d70"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="464" y="21" width="40" height="20" uuid="14f5c06f-51d6-48b7-ac3d-dfcd73954608"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="31" y="23" width="172" height="20" uuid="28035fad-b048-41ee-b7eb-be3b659c6947"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

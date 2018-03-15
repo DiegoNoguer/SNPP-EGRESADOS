@@ -1,0 +1,488 @@
+<html>
+    <head>
+        <title> OPORTUNIDADES LABORALES </title>
+        <meta charset="UTF-8">
+        <LINK rel="icon" type="image/png" href="../../../img/CTA-300x200.png"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../../../css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../../css/estilos.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body   onload="nobackbutton();">
+        <div id="confirmar"></div>
+        <div id="buscar"></div>
+        <div id="panelLinea" class="panel panel-primary">
+            <div class="panel-heading centrado">OPORTUNIDADES | DETALLE</div>
+            <div class="panel-body">
+                <form id="formLinea">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <span>Id Linea</span>
+                        </div>
+                        <div class="col-md-1">
+                            <input id="id_detalleoportunidad" name="id_detalleoportunidad" type="text" class="form-control input-sm" placeholder="Id" readonly="readonly">
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <span>Id Puesto</span>
+                        </div>
+                        <div class="col-md-1">
+                            <input id="id_puesto" name="id_puesto" type="text" class="form-control input-sm" placeholder="Id" onkeypress="return checkIt(event)">
+                        </div>
+                        <div class="col-md-1">
+                            <button id="botonBuscarIdPuesto" type="button" class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-search"></span></button>
+                        </div>
+                        <div class="col-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <span>Puesto</span>
+
+                        </div>
+                        <div class="col-md-4"> 
+                            <input id="nombre_puesto" name="nombre_puesto" type="text" class="form-control input-sm" placeholder="Nombre de la Puesto" readonly="readonly">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <span>Area</span>
+
+                        </div>
+                        <div class="col-md-4"> 
+                            <input id="nombre_area" name="nombre_area" type="text" class="form-control input-sm" placeholder="Nombre del Area" readonly="readonly" >
+                        </div>
+                    </div>
+                    
+                    <div class="panel-heading centrado">PEDIDOS<span id="snombre_empresa"></span> <span id="susuario_usuario"></span></div>
+                    
+                    <div class="row">
+                        <div class="col-md-3">
+                            <span>Edad Requerida</span>
+
+                        </div>
+                        <div class="col-md-4"> 
+                            <input id="rangoedad_detalleoportunidad" name="rangoedad_detalleoportunidad" type="text" class="form-control input-sm" placeholder="Ejemplo: 18 a 20 Años">
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-3">
+                            <span>Horario Requerido</span>
+
+                        </div>
+                        <div class="col-md-4"> 
+                            <input id="horario_detalleoportunidad" name="horario_detalleoportunidad" type="text" class="form-control input-sm" placeholder="Horario">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <span>Vacancia</span>
+
+                        </div>
+                        <div class="col-md-4"> 
+                            <input id="vacancia_detalleoportunidad" name="vacancia_detalleoportunidad" type="text" class="form-control input-sm" placeholder="Vacancia" onkeypress="return checkIt(event)">
+                        </div>
+                    </div>
+
+                    
+                     
+
+
+                </form>
+
+
+
+
+
+            </div>
+            <div class="panel-footer centrado">
+                <button id="botonAgregarLinea" type="button" class="btn btn-success btn-sm">Agregar</button>
+                <button id="botonModificarLinea" type="button" class="btn btn-warning btn-sm">Modificar</button>
+                <button id="botonEliminarLinea" type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirmarEliminarLinea">Eliminar</button>
+                <button id="botonSalirLinea" type="button" class="btn btn-info btn-sm">Salir</button>
+            </div>
+        </div>
+        <br>
+        <br>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <div id="panelPrograma" >
+            <div id="panelDiseño" class="panel panel-primary">
+                <table width="100%" border="0" cellpadding="2">
+                <tr>
+                    <td>
+               
+                <img src="../../../img/menu.jpg" height="100" alt=""/>
+                </td>
+                <td>
+               
+                <img src="../../../img/img11.jpg" height="90" alt=""/>
+                </td>
+                </tr>
+            </table>
+                <div class="panel-heading centrado">INGRESO DE OFERTAS LABORALES<span id="snombre_empresa"></span> <span id="susuario_usuario"></span></div>
+                <div class="panel-body">
+
+
+
+                    <form id="formPrograma">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <span class="glyphicon glyphicon-asterisk"> INGRESE SU CONTRASEÑA PARA REALIZAR SU OFERTA LABORAL </span>
+                            </div>
+                            <div class="col-md-2">
+                                <input id="id_oportunidad" name="id_oportunidad" type="password" class="form-control input-sm" placeholder="Id" onKeyPress="return soloNumeros(event)" >
+                            </div>
+                            </div>
+                           <!-- <div class="col-md-1">
+                                <button id="botonBuscarIdOportunidad" type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+                            </div>
+
+                            
+                        
+                        <div class="col-md-2">
+                                <input id="nombre_oportunidad" name="nombre_oportunidad" type="text" class="form-control input-sm" placeholder="Nombre">
+                            </div>-->
+
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <span>Codigo de la Empresa</span>
+                            </div>
+                            <div class="col-md-2">
+                                <input id="id_empresa" name="id_empresa" type="text" class="form-control input-sm" placeholder="Id"  onkeypress="return soloLetras(event)">
+                            </div>
+                            <div class="col-md-1">
+                                <button id="botonBuscarIdEmpresa" type="button" class="btn btn-primary btn-sm">
+                                    <span class="glyphicon glyphicon-search"></span></button>
+                            </div>
+                            <div class="col-md-4">
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-3">
+                                <span>Nombre de la Empresa</span>
+
+                            </div>
+                            <div class="col-md-4"> 
+                                <input id="nombre_empresa" name="nombre_empresa" type="text" class="form-control input-sm" placeholder="Nombre" readonly="readonly">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <span>Email</span>
+
+                            </div>
+                            <div class="col-md-4"> 
+                                <input id="email_empresa" name="email_empresa" type="text" class="form-control input-sm" placeholder="Email" readonly="readonly">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <span>Direccion</span>
+
+                            </div>
+                            <div class="col-md-4"> 
+                                <input id="direccion_empresa" name="direccion_empresa" type="text" class="form-control input-sm" placeholder="Direccion" readonly="readonly">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <span>Telefono</span>
+
+                            </div>
+                            <div class="col-md-4"> 
+                                <input id="telefono_empresa" name="telefono_empresa" type="text" class="form-control input-sm" placeholder="Telefono" readonly="readonly">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <span>Ruc</span>
+
+                            </div>
+                            <div class="col-md-4"> 
+                                <input id="ruc_empresa" name="ruc_empresa" type="text" class="form-control input-sm" placeholder="Nombre" readonly="readonly">
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <span>Ciudad</span>
+
+                            </div>
+                            <div class="col-md-4"> 
+                                <input id="nombre_ciudad" name="nombre_ciudad" type="text" class="form-control input-sm" placeholder="Nombre" readonly="readonly">
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+                        <br>
+
+
+
+                        <br>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <span class="glyphicon glyphicon-calendar"> Fecha Oportunidad</span>
+                            </div>
+                            <div class="col-md-3">
+                                <input id="fecha_oportunidad" name="fecha_oportunidad" type="date" class="form-control 
+                                       input-sm" readonly="readonly">                         
+                            </div>
+
+
+
+
+
+
+
+                        </div>
+
+
+                    </form>
+
+                    <br>
+                    <br>
+
+                    <div style="text-align: center;font-size: 20px"><b>Puestos Laborales</b></div>
+
+                    <br>
+                    <br>
+
+                    <div id="detalle" hidden=""> <!--hidden=""--> 
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+
+                                    <th class="centrado">Area</th>
+                                    <th>Puesto</th>
+                                    <th>Vacancias</th>
+                                    <th>Horario</th>
+                                    <th>Edad Requerida</th>
+
+
+
+
+
+
+                                    <th class="centrado"><button onclick="agregarLinea()" type="button" id="botonplus" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span></button></th>
+                                </tr>
+                            </thead>
+                            <tbody id="contenidoDetalle">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="panel-footer centrado" >
+                    <!--<button id="botonAgregar" type="button" class="btn btn-primary btn-sm">Agregar</button>
+                
+               <button id="botonModificar" type="button" class="btn btn-warning btn-sm">Modificar</button>-->
+                <!--<button id="botonEliminar" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#confirmarEliminar">Eliminar</button>-->
+                <button id="botonSalir" type="button" class="btn btn-primary btn-sm">Salir</button>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+        </div>
+        <div id="mensajes" class="well well-sm centrado">Mensajes del Sistema.</div>
+        <div class="modal fade" id="confirmarEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header  centrado">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Mensaje del Sistema</h4>
+                    </div>
+                    <div class="modal-body">
+                        Está seguro de Eliminar Este Oportunidad?
+                    </div>
+                    <div class="modal-footer centrado">
+                        <button id="botonEliminarAlert" type="button" class="btn btn-danger btn-sm">Anular</button>
+                        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="confirmarEliminarLinea" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header  centrado">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabelLinea">Mensaje del Sistema</h4>
+                    </div>
+                    <div class="modal-body">
+                        Está seguro de eliminar esta linea?
+                    </div>
+                    <div class="modal-footer centrado">
+                        <button id="botonEliminarAlertLinea" type="button" class="btn btn-primary btn-sm">Eliminar</button>
+                        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../../../js/jquery.min.js" type="text/javascript"></script>
+        <script src="../../../js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../../../js/funciones.js" type="text/javascript"></script>
+        <script src="js/funciones.js" type="text/javascript"></script>
+        <script src="../../../js/custom.js" type="text/javascript"></script>
+        <script>
+                                    //verificarSesion(true);
+
+                                    $("#buscar").css("display", "none");
+                                    $("#panelLinea").css("display", "none");
+                                    $("#id_oportunidad").focus();
+                                     buscarIdOportunidad();
+                                    //siguienteCampo("#id_oportunidad", "#id_proveedor", false);
+
+                                    //siguienteCampo("#id_puesto", "#cantidad_puestooportunidad", false);
+
+                                    if ($("#id_oportunidad").val() === "0") {
+                                        // siguienteCampo("#id_proveedor", "#botonAgregar", false);
+                                    } else {
+
+                                        // siguienteCampo("#id_proveedor", "#botonModificar", false);
+                                    }
+
+                                    //   buscarIdUsuarioClave();
+
+                                    $("#id_oportunidad").focusout(function (event) {
+                                        if ($("#id_oportunidad").val() === "") {
+                                            $("#id_oportunidad").val("0");
+                                        }
+                                        buscarIdOportunidad();
+                                        var id = $("#id_oportunidad").val();
+                                        $("#id_oportunidad").val("0");
+                                        var img = "<img src='../../../img/pedidos/" + id + ".jpg' alt=''>";
+                                        $("#foto").html(img);
+
+                                    });
+
+                                    //EMPRESAS
+                                    $("#id_empresa").focusout(function (event) {
+                                        if ($("#id_empresa").val === "") {
+                                            $("#id_empresa").val("0");
+                                        }
+                                        buscarIdEmpresa();
+                                    });
+
+                                    $("#botonBuscarIdEmpresa").on('click', function () {
+                                        $("#buscar").load("buscarEmpresa.html");
+                                        $("#buscar").fadeIn("slow");
+                                        $("#panelPrograma").fadeOut("slow");
+                                    });
+
+
+
+
+
+                                    $("#id_puesto").focusout(function (event) {
+                                        if ($("#id_puesto").val() === "") {
+                                            $("#id_puesto").val("0");
+                                        }
+                                        buscarIdPuesto();
+                                    });
+                                    $("#botonBuscarIdPuesto").on('click', function () {
+                                        $("#buscar").load("buscarPuestos.html");
+                                        $("#buscar").fadeIn("slow");
+                                        $("#panelLinea").fadeOut("slow");
+                                    });
+
+
+
+                                    $("#botonBuscarIdOportunidad").on('click', function () {
+                                        $("#buscar").load("buscar.html");
+                                        $("#buscar").fadeIn("slow");
+                                        $("#panelPrograma").fadeOut("slow");
+                                    });
+
+
+
+                                    $("#botonBuscarIdUsuario").on('click', function () {
+                                        $("#buscar").load("buscarUsuarios.html");
+                                        $("#buscar").fadeIn("slow");
+                                        $("#panelPrograma").fadeOut("slow");
+                                    });
+
+
+
+                                    $("#botonAgregar").on('click', function () {
+                                        if(validarFormularioOportunidad()){
+                                        agregarOportunidad();
+                                    }
+                                    });
+                                    $("#botonModificar").on('click', function () {
+                                        if(validarFormularioOportunidad()){
+                                        modificarOportunidad();
+                                    }
+                                    });
+                                    $("#botonEliminarAlert").on('click', function () {
+                                        eliminarOportunidad();
+                                        $('#confirmarEliminar').modal('hide');
+                                    });
+
+
+
+                                    $("#botonSalir").on('click', function () {
+                                        location.href = "../../../menu2.html";
+                                    });
+
+                                    $("#botonAgregarLinea").on('click', function () {
+                                           if(validarFormularioOpor()){
+                                        agregarOportunidadDetalle();
+                                          }
+
+
+                                    });
+                                    $("#botonModificarLinea").on('click', function () {
+                                        if(validarFormularioOpor()){
+                                        modificarOportunidadDetalle();
+                                    }
+
+                                    });
+
+
+                                    $("#botonEliminarAlertLinea").on('click', function () {
+                                        eliminarOportunidadDetalle();
+                                        $('#confirmarEliminarLinea').modal('hide');
+                                    });
+
+
+                                    $("#botonSalirLinea").on('click', function () {
+                                        $("#panelLinea").fadeOut("slow");
+                                        $("#panelPrograma").fadeIn("slow");
+                                    });
+
+
+        </script>
+    </body>
+</html>

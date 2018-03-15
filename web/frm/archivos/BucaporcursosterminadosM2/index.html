@@ -1,0 +1,485 @@
+<html>
+    <head>
+        <title> EMPRESAS </title>
+       
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <LINK rel="icon" type="image/png" href="../../../img/CTA-300x200.png"/>
+        <link href="../../../css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../../css/estilos.css" rel="stylesheet" type="text/css"/>
+    </head>
+   <body  onload="nobackbutton();" >
+        <div id="confirmar"></div>
+        <div id="buscar"></div>
+        <div id="panelLinea" class="panel panel-primary">
+            
+            <div class="panel-heading centrado">REGISTROS | DETALLE</div>
+            <div class="panel-body">
+                <form id="formLinea">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <span>Id Linea</span>
+                        </div>
+                        <div class="col-md-1">
+                            <input id="id_detalleregistro" name="id_detalleregistro" type="text" class="form-control input-sm" placeholder="Id" readonly="readonly"  > 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1">
+                            <span>Cursos</span>
+                        </div>
+                        <div class="col-md-1">
+                            <input id="id_curso" name="id_curso" type="text" class="form-control input-sm" placeholder="Id" onkeypress="return checkIt(event)">
+                        </div>
+                        <div class="col-md-1">
+                            <button id="botonBuscarIdCurso" type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+                        </div>
+                        <div class="col-md-3">
+                            <input id="nombre_curso" name="nombre_curso" type="text" class="form-control input-sm" placeholder="Nombre Curso" readonly="readonly">
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <input id="nombre_especialidad" name="nombre_especialidad" type="text" class="form-control input-sm" placeholder="Nombre Especialidad" readonly="readonly">
+                        </div>
+                        
+                        
+                        <div class="col-md-3 form-group" >
+                       <center style="color: white" >Tipo de Curso</center>
+                        <center> <select class="form-control" id="tipo_curso" name="tipo_curso" disabled=""  >
+
+                                <option id="estado1">Tecnico</option>
+                                <option id="estado2">Modular</option>
+
+
+                            </select> </center>    
+                    </div>
+                    <div class="col-md-3 form-group">
+                        <center style="color: white">Duracion</center>
+                        <center> <select class="form-control" id="duracion_curso" name="duracion_curso" disabled="" >
+
+                                <option id="estado1">2 años</option>
+                                <option id="estado2">3 meses</option>
+                                <option id="estado3">2 meses</option>
+
+
+
+                            </select> </center>    
+                    </div>
+
+
+
+
+                    <div class="col-md-3 form-group">
+                        <center style="color: white">Año</center>
+                        <center> <select class="form-control" id="año_curso" name="año_curso" disabled="" >
+
+                                <option id="estado1">2014</option>
+                                <option id="estado2">2015</option>
+                                <option id="estado3">2016</option>
+                                <option id="estado4">2017</option>
+                                <option id="estado5">2018</option>
+                                <option id="estado6">2019</option>
+
+
+                            </select> </center>    
+                    </div>
+
+                        
+                        
+                         
+                       
+                        
+ 
+                        
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="panel-footer centrado">
+                <button id="botonAgregarLinea" type="button" class="btn btn-success btn-sm">Agregar</button>
+                <button id="botonModificarLinea" type="button" class="btn btn-warning btn-sm">Modificar</button>
+                <button id="botonEliminarLinea" type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirmarEliminarLinea">Eliminar</button>
+                 <button onclick="window.location.reload()" type="button" class="btn btn-primary btn-sm">Nuevo</button>
+                <button id="botonSalirLinea" type="button" class="btn btn-info btn-sm">Salir</button>
+            </div>
+        </div>
+        
+        
+        
+        
+        <div id="panelPrograma"   >
+        <div id="panelDiseño" class="panel panel-primary" >
+            <table width="100%" border="0" cellpadding="2">
+                <tr>
+                    <td>
+               
+                <img src="../../../img/menu.jpg" height="100" alt=""/>
+                </td>
+                <td>
+               
+                <img src="../../../img/img11.jpg" height="90" alt=""/>
+                </td>
+                </tr>
+            </table>
+            <div class="panel-heading centrado">EGRESADOS CON SUS RESPECTIVOS CURSOS CULMINADOS<span id="snombre_empresa"></span> <span id="susuario_usuario"></span></div>
+            <div class="panel-body">
+                <form id="formPrograma">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <span class="glyphicon glyphicon-asterisk" > Buscar </span>
+                        </div>
+                        <div class="col-md-1">
+                            <input id="id_registro" name="id_registro" type="text" class="form-control input-sm" placeholder="Id" readonly="readonly"  onkeypress="return checkIt(event)">
+                        </div>
+                        <div class="col-md-1">
+                            <button id="botonBuscarIdRegistro" type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+                        </div>
+                        
+                        
+
+                    </div>
+
+
+                   
+                    <div class="row">
+                        <div class="col-md-2">
+                            <span class="glyphicon glyphicon-user"  >&nbsp;Egresado</span>
+                        </div>
+                        <div class="col-md-1">
+                            <input id="id_egresado" name="id_egresado" type="text" readonly="readonly" class="form-control input-sm" placeholder="Id"  onkeypress="return checkIt(event)">
+                        </div>
+                        <!--<div class="col-md-1">
+                            <button id="botonBuscarIdEgresado" type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+                        </div>-->
+                        <br>
+                        <br>
+                        <br>
+                     
+                        <div class="row">
+                        <div class="col-md-2">
+                            <span class="glyphicon glyphicon-paperclip" > &nbsp;Nombre</span>
+
+                        </div>
+                        <div class="col-md-3"> 
+                            <input id="nombre_egresado" name="nombre_egresado" type="text" class="form-control input-sm" placeholder="Nombre del egresado" readonly="readonly">
+                        </div>
+                            
+                            <div class="col-md-2">
+                            <span class="glyphicon glyphicon-paperclip" >&nbsp;  Apellido</span>
+
+                        </div>
+                        <div class="col-md-3"> 
+                            <input id="apellido_egresado" name="apellido_egresado" type="text" class="form-control input-sm" placeholder="Apellido del egresado" readonly="readonly">
+                        </div>
+                    </div>
+                        
+                        <div class="row">
+                            <div class="col-md-2">
+                                <span class="glyphicon glyphicon-paperclip" >&nbsp;  Cedula</span>
+
+                            </div>
+                            <div class="col-md-3"> 
+                                <input id="cedula_egresado" name="cedula_egresado" type="text" class="form-control input-sm" placeholder="Cedula" readonly="readonly">
+                            </div>
+                            
+                             <div class="col-md-2">
+                                <span class="glyphicon glyphicon-paperclip" >&nbsp;  Telefono</span>
+
+                             </div>
+                             <div class="col-md-3"> 
+                                 <input id="telefono_egresado" name="telefono_egresado" type="text" class="form-control input-sm" placeholder="Telefono" readonly="readonly">
+                             </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <span class="glyphicon glyphicon-paperclip" >&nbsp;  Edad</span>
+
+                            </div>
+                            <div class="col-md-3"> 
+                                <input id="edad_egresado" name="edad_egresado" type="text" class="form-control input-sm" placeholder="Edad" readonly="readonly">
+                            </div>
+                            <div class="col-md-2">
+                                <span class="glyphicon glyphicon-paperclip">&nbsp;  Ciudad</span>
+
+                            </div>
+                            <div class="col-md-3"> 
+                                <input id="nombre_ciudad" name="nombre_ciudad" type="text" class="form-control input-sm" placeholder="Ciudad" readonly="readonly">
+                            </div>
+                        </div>
+
+
+
+
+                        
+                    </div>
+                    
+                    <br>
+                    
+                     
+                    
+                    <br>
+
+                <!--    <div class="row">
+                        <div class="col-md-1">
+                            <span>Usuario</span>
+                        </div>
+                        <div class="col-md-1">
+                            <input id="id_usuario" name="id_usuario" type="text" class="form-control input-sm" placeholder="Id">
+                        </div>
+                        <div class="col-md-1">
+                            <button id="botonBuscarIdUsuario" type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+                        </div>
+                        <div class="col-md-2">
+                            <input id="nombre_usuario" name="nombre_usuario" type="text" class="form-control input-sm" placeholder="Nombre Usuario" disabled="disabled">
+                        </div>
+                    </div>
+!-->
+
+                    <br>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <span class="glyphicon glyphicon-calendar" > Fecha Registro</span>
+                        </div>
+                        <div class="col-md-3">
+                            <input id="fecha_registro" name="fecha_registro" type="date" class="form-control 
+                                   input-sm" readonly="readonly">                         
+                        </div>
+                        
+               
+
+
+
+
+                           
+                    </div>
+
+
+                </form>
+                
+                <br>
+                <br>
+                
+                <div style="text-align: center;font-size: 20px" > <b >CURSOS CULMINADOS</b></div>
+                
+                <br>
+                <br>
+                
+                <div id="detalle" hidden=""> <!--hidden=""--> 
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                             
+                               <th class="centrado">Tipo del Curso</th>
+                                    <th>Nombre</th>
+                                    <th>Especialidad</th>
+                                    <th>Duracion</th>
+                                    <th>Año</th>
+                                  
+
+                                    
+                                
+                                <!--<th class="centrado"><button onclick="agregarLinea()" type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span></button></th>-->
+                            </tr>
+                        </thead>
+                        <tbody id="contenidoDetalle">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="panel-footer centrado">
+               <!--<button id="botonAgregar" type="button" class="btn btn-primary btn-sm">Agregar</button>
+                
+               <button id="botonModificar" type="button" class="btn btn-warning btn-sm">Modificar</button>
+                <button id="botonEliminar" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#confirmarEliminar">Eliminar</button>-->
+                <button id="botonSalir" type="button" class="btn btn-primary btn-sm">Salir</button>
+            </div>
+        </div>
+             <br>
+            <br>
+            <br>
+            </div>
+        <div id="mensajes" class="well well-sm centrado">Mensajes del Sistema.</div>
+        <div class="modal fade" id="confirmarEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header  centrado">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Mensaje del Sistema</h4>
+                    </div>
+                    <div class="modal-body">
+                        Está seguro de Eliminar Este Registro?
+                    </div>
+                    <div class="modal-footer centrado">
+                        <button id="botonEliminarAlert" type="button" class="btn btn-danger btn-sm">Anular</button>
+                        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="confirmarEliminarLinea" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header  centrado">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabelLinea">Mensaje del Sistema</h4>
+                    </div>
+                    <div class="modal-body">
+                        Está seguro de eliminar esta linea?
+                    </div>
+                    <div class="modal-footer centrado">
+                        <button id="botonEliminarAlertLinea" type="button" class="btn btn-primary btn-sm">Eliminar</button>
+                        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../../../js/jquery.min.js" type="text/javascript"></script>
+        <script src="../../../js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../../../js/funciones.js" type="text/javascript"></script>
+        <script src="js/funciones.js" type="text/javascript"></script>
+        <script src="../../../js/custom.js" type="text/javascript"></script>
+        <script>
+                                    //verificarSesion(true);
+
+                                    $("#buscar").css("display", "none");
+                                    $("#panelLinea").css("display", "none");
+                                    $("#id_registro").focus();
+                                     buscarIdRegistro();
+                                     $("#buscar").load("buscar.html");
+                                        $("#buscar").fadeIn("slow");
+                                       $("#panelPrograma").fadeOut("slow");
+                                    //siguienteCampo("#id_registro", "#id_proveedor", false);
+
+                                    //siguienteCampo("#id_curso", "#cantidad_cursoregistro", false);
+
+                                    if ($("#id_registro").val() === "0") {
+                                        // siguienteCampo("#id_proveedor", "#botonAgregar", false);
+                                    } else {
+
+                                        // siguienteCampo("#id_proveedor", "#botonModificar", false);
+                                    }
+
+                                    //   buscarIdUsuarioClave();
+
+                                    $("#id_registro").focusout(function (event) {
+                                        if ($("#id_registro").val() === "") {
+                                            $("#id_registro").val("0");
+                                        }
+                                        buscarIdRegistro();
+                                        var id = $("#id_registro").val();
+                                        $("#id_registro").val("0");
+                                        var img = "<img src='../../../img/pedidos/" + id + ".jpg' alt=''>";
+                                        $("#foto").html(img);
+
+                                    });
+                                    
+                                     $("#id_egresado").focusout(function (event) {
+                                        if ($("#id_egresado").val === "") {
+                                         $("#id_egresado").val("0");
+                                          }
+                                        buscarBorraridegresado3();
+                                         });
+                                    
+                                    //EGRESADO
+                               //     $("#id_egresado").focusout(function (event) {
+                                //    if ($("#id_egresado").val === "") {
+                               //      $("#id_egresado").val("0");
+                              //         }
+                              //       buscarIdEgresado();
+                               //       });
+            
+            
+          
+
+                                        $("#botonBuscarIdEgresado").on('click', function () {
+                                        $("#buscar").load("buscarEgresado.html");
+                                        $("#buscar").fadeIn("slow");
+                                       $("#panelPrograma").fadeOut("slow");
+                                        });
+                                    
+
+                                 
+
+
+                                    $("#id_curso").focusout(function (event) {
+                                        if ($("#id_curso").val() === "") {
+                                            $("#id_curso").val("0");
+                                        }
+                                        buscarIdCurso();
+                                    });
+                                    $("#botonBuscarIdCurso").on('click', function () {
+                                        $("#buscar").load("buscarCursos.html");
+                                        $("#buscar").fadeIn("slow");
+                                        $("#panelLinea").fadeOut("slow");
+                                    });
+                                    
+                                    
+                                    
+                                    $("#botonBuscarIdRegistro").on('click', function () {
+                                        $("#buscar").load("buscar.html");
+                                        $("#buscar").fadeIn("slow");
+                                        $("#panelPrograma").fadeOut("slow");
+                                    });
+                                    
+                                      
+
+                                    $("#botonBuscarIdUsuario").on('click', function () {
+                                        $("#buscar").load("buscarUsuarios.html");
+                                        $("#buscar").fadeIn("slow");
+                                        $("#panelPrograma").fadeOut("slow");
+                                    });
+                                    
+
+
+                                    $("#botonAgregar").on('click', function () {
+                                      if (validarFormularioRegistro()) {
+                                             agregarRegistro();
+                                        }
+                                    });
+                                    $("#botonModificar").on('click', function () {
+                                            if (validarFormularioRegistro()) {
+                                        modificarRegistro();
+                                    }
+                                    });
+                                    $("#botonEliminarAlert").on('click', function () {
+                                        eliminarRegistro();
+                                        $('#confirmarEliminar').modal('hide');
+                                    });
+                                    
+                                    
+                                    
+                                    $("#botonSalir").on('click', function () {
+                                        location.href = "../../../menu2.html";
+                                    });
+
+                                    $("#botonAgregarLinea").on('click', function () {
+                                       if(validarFormularioRegistro1()){
+                                                  agregarRegistroDetalle();
+                                       }
+                                  
+
+                                    });
+                                    $("#botonModificarLinea").on('click', function () {
+                                        if(validarFormularioRegistro1()){
+                                        modificarRegistroDetalle();
+                                    }
+
+                                    });
+                                    
+                                    
+                                    $("#botonEliminarAlertLinea").on('click', function () {
+                                        eliminarRegistroDetalle();
+                                        $('#confirmarEliminarLinea').modal('hide');
+                                    });
+                                    
+                                    
+                                    $("#botonSalirLinea").on('click', function () {
+                                        $("#panelLinea").fadeOut("slow");
+                                        $("#panelPrograma").fadeIn("slow");
+                                    });
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="registro2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="71f0b4d3-976a-4dd6-b009-47b31f17ab91">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="DESDE" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="HASTA" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from registros r  left join detallesregistros d on d.id_registro=r.id_registro
+left join cursos c on d.id_curso=c.id_curso
+left join egresados e on r.id_egresado=e.id_egresado
+left join ciudades ci on e.id_ciudad=ci.id_ciudad
+where r.id_registro= $P{DESDE}]]>
+	</queryString>
+	<field name="id_registro" class="java.lang.Integer"/>
+	<field name="fecha_registro" class="java.sql.Date"/>
+	<field name="id_egresado" class="java.lang.Integer"/>
+	<field name="nombre_registro" class="java.lang.String"/>
+	<field name="id_detalleregistro" class="java.lang.Integer"/>
+	<field name="id_curso" class="java.lang.Integer"/>
+	<field name="nombre_curso" class="java.lang.String"/>
+	<field name="id_especialidad" class="java.lang.Integer"/>
+	<field name="tipo_curso" class="java.lang.String"/>
+	<field name="duracion_curso" class="java.lang.String"/>
+	<field name="año_curso" class="java.lang.String"/>
+	<field name="nombre_egresado" class="java.lang.String"/>
+	<field name="apellido_egresado" class="java.lang.String"/>
+	<field name="telefono_egresado" class="java.lang.String"/>
+	<field name="id_ciudad" class="java.lang.Integer"/>
+	<field name="id_estadocivil" class="java.lang.Integer"/>
+	<field name="fechanaci_egresado" class="java.sql.Date"/>
+	<field name="edad_egresado" class="java.lang.Integer"/>
+	<field name="otroestudio_egresado" class="java.lang.String"/>
+	<field name="nivelacademico_egresado" class="java.lang.String"/>
+	<field name="aptitud_egresado" class="java.lang.String"/>
+	<field name="manejoidioma_egresado" class="java.lang.String"/>
+	<field name="tipogenero_egresado" class="java.lang.String"/>
+	<field name="cedula_egresado" class="java.lang.Integer"/>
+	<field name="nombre_ciudad" class="java.lang.String"/>
+	<field name="id_departamento" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="65" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-23" y="-22" width="598" height="71" forecolor="#FFFF66" backcolor="#3333FF" uuid="9062417a-3374-46de-9464-830a7b7ef8a4"/>
+				<staticText>
+					<reportElement x="19" y="14" width="407" height="40" forecolor="#FFFFFF" uuid="9eb14c98-301d-44e8-8b66-d00cab7a28b0"/>
+					<textElement>
+						<font size="26" isBold="true" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[Registro de cursos culminados]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="512" splitType="Stretch">
+			<staticText>
+				<reportElement x="20" y="115" width="100" height="20" uuid="5dbaf7d3-e3b6-4307-b5bb-145697a6731a"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cedula:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="284" y="155" width="100" height="20" uuid="7f550718-fa3c-4aa0-8fd0-640a4fa05342"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ciudad:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="120" y="115" width="135" height="20" uuid="34197c2b-a355-4e43-89a3-27ff85399d3f"/>
+				<textFieldExpression><![CDATA[$F{cedula_egresado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="384" y="155" width="146" height="20" uuid="8a82d17b-e7c3-4ea0-9504-56f6bdf7601b"/>
+				<textFieldExpression><![CDATA[$F{nombre_ciudad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="19" y="75" width="100" height="20" uuid="93ca293f-f17c-402d-b0a0-5b6deab705e1"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="119" y="75" width="135" height="20" uuid="2f9482a2-15dd-472a-afc7-aa2828646e21"/>
+				<textFieldExpression><![CDATA[$F{nombre_egresado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="284" y="75" width="100" height="20" uuid="8c9dbb38-933b-4237-b1a4-9700aff9e21c"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellido:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="384" y="75" width="149" height="20" uuid="fe21d500-5c34-4751-80ae-4fa79163f587"/>
+				<textFieldExpression><![CDATA[$F{apellido_egresado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-1" y="483" width="184" height="29" uuid="9c909ce7-f8f5-457e-ba65-b02df355489e"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cursos Culminados]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="2" width="100" height="20" uuid="06505cc5-4a72-4e15-afd4-a53c59935f69"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[id_registro:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="120" y="2" width="100" height="20" uuid="d82e8025-83dc-455f-a7c1-d96ff0c81998"/>
+				<textFieldExpression><![CDATA[$F{id_registro}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="183" y="483" width="100" height="29" uuid="89b97c6e-2905-49d0-b596-e0d57feff570"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo de curso]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="284" y="483" width="100" height="29" uuid="7603949d-6600-45df-b6d2-05752317e542"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Año]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="384" y="483" width="100" height="29" uuid="16168f7a-a381-46e5-ba61-0ca07e2d9197"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Duracion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="284" y="115" width="97" height="20" uuid="a2b360b3-547b-439c-844c-b1d82d98af2a"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefono:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="381" y="115" width="149" height="20" uuid="33381bea-b18d-4109-a4e7-bf40df336595"/>
+				<textFieldExpression><![CDATA[$F{telefono_egresado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="19" y="155" width="100" height="20" uuid="1aeffa7c-88c6-424d-8a0e-8bca9f5d74fd"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Edad:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="119" y="155" width="135" height="20" uuid="a9dbc703-57c8-41bc-b574-e5c5012dda27"/>
+				<textFieldExpression><![CDATA[$F{edad_egresado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="35" width="164" height="20" uuid="efbb615a-0b7f-4a6a-8b6a-b9c96e67afa3"/>
+				<textElement>
+					<font size="14" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[DATOS PERSONALES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="188" width="140" height="20" uuid="ceae6924-0168-4b39-8a56-b71c1c8474ab"/>
+				<textElement>
+					<font size="14" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[OTROS DATOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="226" width="100" height="20" uuid="59a70441-3076-456c-934e-b8fe8b9b7e08"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nivel academico:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="226" width="380" height="34" uuid="0dfcc25e-c556-4c30-80ad-3c7abff030d2"/>
+				<textFieldExpression><![CDATA[$F{nivelacademico_egresado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="274" width="100" height="20" uuid="911c9c07-831c-4629-ac68-b47fab1b8023"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Otros estudios:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="274" width="380" height="30" uuid="da3ff210-46d3-4e80-97ca-d4f9a0217385"/>
+				<textFieldExpression><![CDATA[$F{otroestudio_egresado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="314" width="100" height="20" uuid="a7720463-7bcf-4bcd-ba4d-86b7d3b5aec8"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Idiomas:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="314" width="380" height="37" uuid="b791ae29-09e6-40aa-b0a0-2992ebef25ca"/>
+				<textFieldExpression><![CDATA[$F{manejoidioma_egresado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="371" width="100" height="20" uuid="cb80f721-5ca3-4c56-b683-cfc80699e967"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Aptitud:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="371" width="380" height="38" uuid="85abd820-5184-4cd7-83d2-7ed8be482231"/>
+				<textFieldExpression><![CDATA[$F{aptitud_egresado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="19" y="440" width="219" height="29" uuid="63f64b3d-aa25-49b5-a7d3-5c44f223e52c"/>
+				<textElement>
+					<font size="16" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[CURSOS CULMINADOS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="184" height="20" uuid="383ebd26-f0dd-4a9b-96f1-a9b780c0913c"/>
+				<textFieldExpression><![CDATA[$F{nombre_curso}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="184" y="0" width="100" height="20" uuid="4b177de1-0c6b-49f4-9bab-d3abb8c46bdd"/>
+				<textFieldExpression><![CDATA[$F{tipo_curso}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="0" width="100" height="20" uuid="bcdf31f2-cad0-4273-8aa7-3165b7c095ba"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{año_curso}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="384" y="0" width="100" height="20" uuid="e22f11ce-138b-4c60-b1d4-4b32e96c99f8"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{duracion_curso}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="384" y="13" width="80" height="20" uuid="16cb1ffd-efb0-4ace-9484-b44756b414b0"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="464" y="13" width="40" height="20" uuid="31965697-9c92-4755-9a14-be2494e79fc0"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="13" width="100" height="20" uuid="4e27c566-b434-4034-a6f3-5a0b4aade9cf"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
